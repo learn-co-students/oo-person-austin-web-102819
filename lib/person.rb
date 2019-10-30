@@ -5,14 +5,16 @@ class Person
 
     def happiness=(happiness)
         @happiness = happiness
-        @happiness > 10 ? @happiness = 10 : @happiness = @happiness
-        @happiness < 0 ? @happiness = 0 : @happiness = @happiness
+        @happiness.clamp(0..10)
+        # @happiness > 10 ? @happiness = 10 : @happiness = @happiness
+        # @happiness < 0 ? @happiness = 0 : @happiness = @happiness
     end
 
     def hygiene=(hygiene)
         @hygiene = hygiene
-        @hygiene > 10 ? @hygiene = 10 : @hygiene = @hygiene
-        @hygiene < 0 ? @hygiene = 0 : @hygiene = @hygiene
+        @hygiene.clamp(0..10)
+        # @hygiene > 10 ? @hygiene = 10 : @hygiene = @hygiene
+        # @hygiene < 0 ? @hygiene = 0 : @hygiene = @hygiene
     end
 
     def get_paid(salary_amount)
