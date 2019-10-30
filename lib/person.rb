@@ -1,7 +1,7 @@
 # your code goes here
 class Person
-    attr_reader :name#, :happiness, :hygiene
-    attr_accessor :bank_account, :happiness, :hygiene
+    attr_reader :name, :happiness, :hygiene
+    attr_accessor :bank_account
 
     def happiness=(happiness)
         @happiness = happiness
@@ -31,8 +31,7 @@ class Person
     def call_friend(friend)
         self.happiness += 3
         friend.happiness += 3
-        # self.happiness = 10 if self.happiness > 10
-        # friend.happiness = 10 if friend.happiness > 10
+    
         "Hi #{friend.name}! It's #{self.name}. How are you?"
     end
 
@@ -41,15 +40,12 @@ class Person
         when "politics"
             friend.happiness -= 2
             self.happiness -= 2
-            # friend.happiness = 0 if friend.happiness < 0
-            # self.happiness = 0 if self.happiness < 0
+            
             return "blah blah partisan blah lobbyist"
         when "weather"
             friend.happiness += 1
             self.happiness += 1
-            # friend.happines = 10 if friend.happiness > 10
-            # self.happiness = 10 if self.happiness > 10
-
+            
             "blah blah sun blah rain"
         else
             "blah blah blah blah blah"
